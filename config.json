@@ -1,0 +1,95 @@
+{
+  "checks": [
+    {
+      "name": "ParkleitAPI Ping",
+      "type": "web-ping",
+      "config": {
+        "address": "https://parkleit-api.codeformuenster.org"
+      },
+      "send_alerts": [
+        "chat"
+      ],
+      "backoff": {
+        "type": "constant",
+        "interval": 60
+      },
+      "triggers": [
+        {
+          "metric": "latency",
+          "criteria": ">2500"
+        }
+      ]
+    },
+    {
+      "name": "Bürgerbüro Ping",
+      "type": "web-ping",
+      "config": {
+        "address": "https://buergerbuero.codeformuenster.org"
+      },
+      "send_alerts": [
+        "chat"
+      ],
+      "backoff": {
+        "type": "constant",
+        "interval": 60
+      },
+      "triggers": [
+        {
+          "metric": "latency",
+          "criteria": ">2500"
+        }
+      ]
+    },
+    {
+      "name": "Aufgrabungen Ping",
+      "type": "web-ping",
+      "config": {
+        "address": "https://aufgrabungen.codeformuenster.org"
+      },
+      "send_alerts": [
+        "chat"
+      ],
+      "backoff": {
+        "type": "constant",
+        "interval": 60
+      },
+      "triggers": [
+        {
+          "metric": "latency",
+          "criteria": ">2500"
+        }
+      ]
+    },
+    {
+      "name": "kli api Ping",
+      "type": "web-ping",
+      "config": {
+        "address": "https://unims-kli-api.codeformuenster.org"
+      },
+      "send_alerts": [
+        "chat"
+      ],
+      "backoff": {
+        "type": "constant",
+        "interval": 60
+      },
+      "triggers": [
+        {
+          "metric": "latency",
+          "criteria": ">2500"
+        }
+      ]
+    }
+  ],
+  "notifications": [
+    {
+      "name": "chat",
+      "type": "slack",
+      "config": {
+        "webhook_url": "<WEBHOOK_URL>",
+        "channel": "#notifications",
+        "username": "redalert https://status.codeformuenster.org/"
+      }
+    }
+  ]
+}

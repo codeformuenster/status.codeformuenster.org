@@ -1,0 +1,8 @@
+monitoring:
+  image: jonog/redalert
+  volumes:
+    - ./config.json:/config.json
+  ports:
+    - 8888:8888
+
+
